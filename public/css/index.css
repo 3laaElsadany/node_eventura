@@ -1,0 +1,9 @@
+.imgView{
+  height:150px; 
+  width:150px;
+  border-radius: 50%;
+}
+
+.imgPri{
+  display: none;
+}

@@ -1,0 +1,30 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/navbar.ejs') %>
+
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-md-3">
+      <img class="imgView" src="/images/<%= user.avatar %>" alt="not found">
+    </div>
+    <div class="col-md-9">
+      <div class="display-4 mb-4">Profile</div>
+
+      <%- include('../partials/messages.ejs') %>
+
+      <% if (user) { %>
+        <div>Welcome your email is <%= user.email %></div>
+      <% } %>
+
+      <form action="/users/uploadAvatar" method="post" enctype="multipart/form-data">
+        <input type="file" name="avatar" id="avatar" onchange="readURL(this)">
+        <button type="submit" class="btn btn-primary">Upload</button>
+      </form>
+      <hr>
+      <h1 class="display-4">Image Privew</h1>
+      <img src="#" class="imgView imgPri" alt="not found" id="imagePlaceholder">
+      
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer.ejs') %>
